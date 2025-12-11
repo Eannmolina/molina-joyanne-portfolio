@@ -1,0 +1,231 @@
+/* styles.css */
+/* Custom theme variables and overrides */
+/* Uses CSS variables for easy theme control */
+:root{
+  --primary: #6f42c1; /* custom purple */
+  --primary-2: #8b5cf6;
+  --muted: #6c757d;
+  --max-width: 1100px;
+  --radius: 12px;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Basic resets */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: var(--font-sans);
+  line-height:1.6;
+  color:#222;
+  background: linear-gradient(180deg, #fff 0%, #fbfbff 100%);
+}
+
+/* Brand overrides */
+.site-header .navbar-brand .brand-text{
+  font-weight:700;
+  color:var(--primary);
+  letter-spacing:0.2px;
+}
+.brand-avatar{
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid rgba(111,66,193,0.12);
+}
+
+/* Hero section custom look */
+.hero-section{
+  padding:5rem 0;
+  background: linear-gradient(135deg, rgba(139,92,246,0.06), rgba(111,66,193,0.03));
+}
+.text-gradient{
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Avatar sizes */
+.hero-avatar{box-shadow: 0 12px 30px rgba(99,70,219,0.12); border-radius: 50%;}
+.about-avatar{width:160px; height:160px; object-fit:cover;}
+
+/* Section headers */
+.section-header h2{font-size:1.6rem; font-weight:700; color: #222;}
+.section-header p{margin-bottom:0; color:var(--muted);}
+
+/* Skill cards */
+.progress{height:14px;background:#f1f3f5;border-radius:10px;}
+.progress-bar{background: linear-gradient(90deg,var(--primary), var(--primary-2));}
+
+/* Project cards */
+.project-card img{height:180px; object-fit:cover; border-top-left-radius: calc(var(--radius) - 4px); border-top-right-radius: calc(var(--radius)-4px);}
+.project-card{border:none; border-radius:var(--radius); box-shadow: 0 8px 24px rgba(23,21,36,0.06); overflow:hidden;}
+
+/* Contact form */
+.contact-form .form-control{border-radius:10px;}
+.contact-details{background:#fff;}
+
+/* Footer */
+.site-footer{background:linear-gradient(180deg,#0b0b12, #111); color:#ddd;}
+.site-footer a{color:#f3f0ff; text-decoration:underline;}
+
+/* Buttons custom */
+.btn-primary{
+  background: linear-gradient(180deg, var(--primary), var(--primary-2));
+  border: none;
+  box-shadow: 0 8px 20px rgba(99,70,219,0.14);
+  border-radius: 10px;
+  padding: .6rem 1.1rem;
+}
+.btn-outline-secondary{
+  border-radius:10px;
+  border-color: rgba(33,37,41,0.08);
+}
+
+/* Responsive tweaks with media queries */
+@media (max-width: 991px){
+  .hero-section{padding:3rem 0;}
+  .hero-avatar{width:180px;height:180px}
+}
+
+/* Accessibility focus states */
+a:focus, button:focus, input:focus, textarea:focus{
+  outline: 3px solid rgba(111,66,193,0.15);
+  outline-offset: 2px;
+  border-radius:6px;
+}
+
+/* Default for web projects */
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Modern Skills Cards */
+.skill-card {
+  background: linear-gradient(135deg, #ffffff, #f9f7ff);
+  border-radius: var(--radius);
+  box-shadow: 0 12px 24px rgba(111, 66, 193, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(111, 66, 193, 0.2);
+}
+
+.skill-card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.skill-card p {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.progress {
+  height: 12px;
+  border-radius: 8px;
+  background: #eae6f7;
+}
+
+.progress-bar {
+  background: linear-gradient(90deg, var(--primary), var(--primary-2));
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: right;
+  padding-right: 4px;
+}
+
+
+/* Special styling for mobile app screenshots */
+.mobile-app-img {
+  height: auto !important;
+  object-fit: contain !important;
+  padding: 8px;
+  background-color: #f2f2f2;
+}
+
+.mobile-frame {
+  width: 260px;          
+  aspect-ratio: 9 / 19;    
+  background: #000;      
+  border-radius: 30px;   
+  padding: 12px;         
+  display: flex;         
+  align-items: center;   
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.mobile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 22px;
+}
+
+/* Project cards */
+.project-card {
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(23,21,36,0.06);
+  overflow: hidden;
+}
+
+/* Default for landscape/web project */
+.card-img-top {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Mobile App Frame */
+.mobile-frame {
+  width: 100%;
+  max-width: 260px;         /* consistent width */
+  aspect-ratio: 9 / 19;     /* portrait phone */
+  border-radius: 30px;
+  background: #000;
+  padding: 12px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.mobile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 22px;
+  background-color: #f2f2f2;
+}
+
+/* Web Project Frame */
+.web-frame {
+  width: 100%;
+  max-width: 260px;          /* same max width */
+  height: auto;              /* natural landscape height */
+  border-radius: 20px;
+  background: #f8f9fa;
+  padding: 8px;
+  margin: 0 auto 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.web-frame img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 16px;
+}
